@@ -1,0 +1,64 @@
+{
+  "companies": [
+    {
+      "CompanyID": 1002581,
+      "CompanyName": "TechCorp",
+      "Email": "techcorp@company.com",
+      "Password": "tcpassword001"
+    },
+    {
+      "CompanyID": 2002582,
+      "CompanyName": "SoftSolutions",
+      "Email": "softsolutions@company.com",
+      "Password": "sspassword002"
+    },
+    {
+      "CompanyID": 3002583,
+      "CompanyName": "InnovativeIT",
+      "Email": "innovativeit@company.com",
+      "Password": "iipassword003"
+    },
+    {
+      "CompanyID": 4002584,
+      "CompanyName": "DataStream",
+      "Email": "datastream@company.com",
+      "Password": "dspassword004"
+    },
+    {
+      "CompanyID": 5002585,
+      "CompanyName": "CyberTech",
+      "Email": "cybertech@company.com",
+      "Password": "ctpword005"
+    },
+    {
+      "CompanyID": 6002586,
+      "CompanyName": "NetSolutions",
+      "Email": "netsolutions@company.com",
+      "Password": "nspassword006"
+    },
+    {
+      "CompanyID": 7002587,
+      "CompanyName": "CloudMatrix",
+      "Email": "cloudmatrix@company.com",
+      "Password": "cmpassword007"
+    },
+    {
+      "CompanyID": 8002588,
+      "CompanyName": "TechPioneers",
+      "Email": "techpioneers@company.com",
+      "Password": "tppassword008"
+    },
+    {
+      "CompanyID": 9002589,
+      "CompanyName": "FutureTech",
+      "Email": "futuretech@company.com",
+      "Password": "ftpword009"
+    },
+    {
+      "CompanyID": 1002580,
+      "CompanyName": "VisionIT",
+      "Email": "visionit@company.com",
+      "Password": "vipassword010"
+    }
+  ]
+}

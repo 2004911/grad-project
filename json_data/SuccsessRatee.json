@@ -1,0 +1,318 @@
+[
+  {
+    "StudentID": 1,
+    "Name": "Ahmad Ali Hasan",
+    "CoursesTaken": [
+      {
+        "CourseName": "تحليل وتصميم الخوارزميات",
+        "Grades": { "First":{"Conceptual": 2 , "Practical": 3},
+                    "Second": {"Conceptual": 2 , "Practical": 3},
+                    "Assignment": 10,
+                    "Final": {"Conceptual": 14 , "Practical": 10}  },
+        "Passed": false
+      },
+      {
+       
+        "CourseName": "مقدمة في تطوير الويب",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 5},
+                    "Second": {"Conceptual": 6 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 15 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "برمجة علوم البيانات",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 7},
+                    "Second": {"Conceptual": 8 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 18 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "إدارة المشاريع",
+        "Grades": { "First": {"Conceptual": 8 , "Practical": 8},
+                    "Second": {"Conceptual": 8 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 19 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "هندسة وتحليل البيانات",
+        "Grades": { "First": {"Conceptual": 9 , "Practical": 7},
+                    "Second": {"Conceptual": 8 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 19 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مشروع تخرج (1",
+        "Grades": { "Final": { "Conceptual": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(2) مشروع تخرج ",
+        "Grades": { "Final": { "Practical": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مختبر البرمجة في علوم البيانات (عملي",
+        "Grades": { "Midterm":{"Conceptual": 15 , "Practical": 18},
+                    "Assinment": 30,
+                    "Final": {"Conceptual": 20 , "Practical": 18} },
+        "Passed": true
+      }      
+    ]
+  },
+  {
+    "StudentID": 2,
+    "Name": "Sara Ahmad Zaid",
+    "CoursesTaken": [
+      {
+        "CourseName": "تحليل وتصميم الخوارزميات",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 5},
+                    "Second": {"Conceptual": 6 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 20 , "Practical": 20} },
+        "Passed": true
+      },
+      {
+        "CourseName": "مقدمة في تطوير الويب",
+        "Grades": { "First": {"Conceptual": 7 , "Practical": 5},
+                    "Second": {"Conceptual": 9 , "Practical": 5},
+                    "Assignment": 15,
+                    "Final": {"Conceptual": 20 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "برمجة علوم البيانات",
+        "Grades": { "First": {"Conceptual": 6 , "Practical": 7},
+                    "Second": {"Conceptual": 8 , "Practical": 9},
+                    "Assignment": 17,
+                    "Final": {"Conceptual": 20 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "إدارة المشاريع",
+        "Grades": { "First": {"Conceptual": 9 , "Practical": 7},
+                    "Second": {"Conceptual": 10 , "Practical": 10},
+                    "Assignment": 18,
+                    "Final": {"Conceptual": 15 , "Practical": 15} },
+        "Passed": true
+      },
+      {
+        "CourseName": "هندسة وتحليل البيانات",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 8},
+                    "Second": {"Conceptual": 6 , "Practical": 10},
+                    "Assignment": 18,
+                    "Final": {"Conceptual": 20 , "Practical": 12} },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مشروع تخرج (1",
+        "Grades": { "Final": { "Conceptual": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(2) مشروع تخرج ",
+        "Grades": { "Final": { "Practical": 90 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مختبر البرمجة في علوم البيانات (عملي",
+        "Grades": { "Midterm":{"Conceptual": 16 , "Practical": 17},
+                    "Assinment": 25,
+                    "Final": {"Conceptual": 19 , "Practical": 19} },
+        "Passed": true
+      }
+    ]
+  },
+  {
+    "StudentID": 3,
+    "Name": "Mohammad Yaseen Tarek",
+    "CoursesTaken": [
+      {
+        "CourseName": "تحليل وتصميم الخوارزميات",
+        "Grades": { "First": {"Conceptual": 7 , "Practical": 8},
+                    "Second": {"Conceptual": 10 , "Practical": 10},
+                    "Assignment": 14,
+                    "Final": {"Conceptual": 19 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "مقدمة في تطوير الويب",
+        "Grades": { "First": {"Conceptual": 9 , "Practical": 8},
+                    "Second": {"Conceptual": 10 , "Practical": 5},
+                    "Assignment": 14,
+                    "Final": {"Conceptual": 20 , "Practical": 18} },
+        "Passed": true
+      },
+      {
+        "CourseName": "برمجة علوم البيانات",
+        "Grades": { "First": {"Conceptual": 9 , "Practical": 9},
+                    "Second": {"Conceptual": 10 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 20 , "Practical": 16} },
+        "Passed": true
+      },
+      {
+        "CourseName": "إدارة المشاريع",
+        "Grades": { "First": {"Conceptual": 7 , "Practical": 7},
+                    "Second": {"Conceptual": 10 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 19 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "هندسة وتحليل البيانات",
+        "Grades": { "First": {"Conceptual": 9 , "Practical": 9},
+                    "Second": {"Conceptual": 6 , "Practical": 7},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 15 , "Practical": 20} },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مشروع تخرج (1",
+        "Grades": { "Final": { "Conceptual": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(2) مشروع تخرج ",
+        "Grades": { "Final": { "Practical": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مختبر البرمجة في علوم البيانات (عملي",
+        "Grades": { "Midterm":{"Conceptual": 18 , "Practical": 18},
+                    "Assinment": 28,
+                    "Final": {"Conceptual": 14 , "Practical": 15} },
+        "Passed": true
+      }
+    ]
+  },
+  {
+    "StudentID": 4,
+    "Name": "Laila Sami Naser",
+    "CoursesTaken": [
+      {
+        "CourseName": "تحليل وتصميم الخوارزميات",
+        "Grades": { "First": {"Conceptual": 8 , "Practical": 9},
+                    "Second": {"Conceptual": 9 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 20 , "Practical": 14} },
+        "Passed": true
+      },
+      {
+        "CourseName": "مقدمة في تطوير الويب",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 8},
+                    "Second": {"Conceptual": 8 , "Practical": 7},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 15 , "Practical": 16} },
+        "Passed": true
+      },
+      {
+        "CourseName": "برمجة علوم البيانات",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 5},
+                    "Second": {"Conceptual": 9 , "Practical": 6},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 15 , "Practical": 19} },
+        "Passed": true
+      },
+      {
+        "CourseName": "إدارة المشاريع",
+        "Grades": { "First": {"Conceptual": 7 , "Practical": 9},
+                    "Second": {"Conceptual": 7 , "Practical": 7},
+                    "Assignment": 19,
+                    "Final": {"Conceptual": 20 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "هندسة وتحليل البيانات",
+        "Grades": { "First": {"Conceptual": 7 , "Practical": 6},
+                    "Second": {"Conceptual": 9 , "Practical": 10},
+                    "Assignment": 17,
+                    "Final": {"Conceptual": 18 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مشروع تخرج (1",
+        "Grades": { "Final": { "Conceptual": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(2) مشروع تخرج ",
+        "Grades": { "Final": { "Practical": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مختبر البرمجة في علوم البيانات (عملي",
+        "Grades": { "Midterm":{"Conceptual": 14 , "Practical": 13},
+                    "Assinment": 30,
+                    "Final": {"Conceptual": 20 , "Practical": 18} },
+        "Passed": true
+      }
+    ]
+  },
+  {
+    "StudentID": 5,
+    "Name": "Omar Khaled Ayman",
+    "CoursesTaken": [
+      {
+        "CourseName": "تحليل وتصميم الخوارزميات",
+        "Grades": { "First": {"Conceptual": 8 , "Practical": 7},
+                    "Second": {"Conceptual": 9 , "Practical": 10},
+                    "Assignment": 18,
+                    "Final": {"Conceptual": 20 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "مقدمة في تطوير الويب",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 10},
+                    "Second": {"Conceptual": 8 , "Practical": 10},
+                    "Assignment": 19,
+                    "Final": {"Conceptual": 20 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "برمجة علوم البيانات",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 8},
+                    "Second": {"Conceptual": 7 , "Practical": 10},
+                    "Assignment": 19,
+                    "Final": {"Conceptual": 17 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "إدارة المشاريع",
+        "Grades": { "First": {"Conceptual": 10 , "Practical": 8},
+                    "Second": {"Conceptual": 10 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 20 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "هندسة وتحليل البيانات",
+        "Grades": { "First": {"Conceptual": 7 , "Practical": 7},
+                    "Second": {"Conceptual": 7 , "Practical": 10},
+                    "Assignment": 20,
+                    "Final": {"Conceptual": 20 , "Practical": 17} },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مشروع تخرج (1",
+        "Grades": { "Final": { "Conceptual": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(2) مشروع تخرج ",
+        "Grades": { "Final": { "Practical": 100 } },
+        "Passed": true
+      },
+      {
+        "CourseName": "(مختبر البرمجة في علوم البيانات (عملي",
+        "Grades": { "Midterm":{"Conceptual": 18 , "Practical": 18},
+                    "Assinment": 28,
+                    "Final": {"Conceptual": 20 , "Practical": 20} },
+        "Passed": true
+      }
+    ]
+  }
+]
