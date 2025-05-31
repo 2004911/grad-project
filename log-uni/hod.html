@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack | Departments Head</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="../img/icons.png" />
+    <link rel="stylesheet" href="../jobs/jobs.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <style>
+        body {
+            text-align: center;
+
+        }
+
+        .chart-container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        .chart-container2 {
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+
+        .chart-center {
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .chart-center i {
+            pointer-events: none;
+        }
+
+        .chart-center span {
+            pointer-events: none;
+        }
+
+        .chart-center a {
+            pointer-events: auto;
+            border-radius: 10px;
+            width: 150px;
+            padding: 10px;
+            background-color: #8ecae6;
+            color: rgb(40, 61, 105);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chart-center a:hover {
+            background-color: #6dbad3;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgb(40, 61, 105);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .chart-center {
+            position: absolute;
+            top: 44%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+        }
+
+        .student-search-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #1f2937;
+            color: white;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+
+        .student-search-container input {
+            padding: 8px;
+            width: 70%;
+            border-radius: 5px;
+            border: none;
+            margin-right: 5px;
+        }
+
+        .student-search-container button {
+            padding: 8px 12px;
+            border-radius: 5px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+        }
+
+        .student-info-box {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #374151;
+            border-radius: 8px;
+        }
+
+        .bg-primary-subtle {
+            background-color: #1b2a41 !important;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="hod-icon d-flex gap-1 align-content-stretch text-white">
+                    <i class="fa-solid fa-user-tie fa-2xl pt-2"></i>
+                    <span>Head of Department</span>
+                </div>
+                <div class="navbar-brand d-flex align-items-start">
+                    <i class="fa-solid fa-graduation-cap fa-xl cap-icon"></i>
+                    <a class="brand-text pe-5" href="../index.html">EduTrack</a>
+                </div>
+                <a href="../index.html" class="btn btn-outline-light pe-4 ps-4 me-2" type="submit">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-5 pt-5">
+        <div class="container-fluid ps-3 pt-3">
+            <div class="row">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <span class="fs-6"><strong>Number of Students in the Department</strong></span>
+                    <div class="chart-container pt-3">
+                        <canvas id="studentYearChart"></canvas>
+                        <div class="chart-center d-flex gap-3">
+                            <i class="fa-regular fa-user fa-3x text-white"></i>
+                            <span id="studentTotal" class="text-white fw-bold fs-6"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <span class="fs-6"><strong>Success Rate in Department</strong></span>
+                    <div class="chart-container pt-3">
+                        <canvas id="averageSuccessChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <span class="fs-6"><strong>Jobs Vacancies</strong></span>
+                    <div class="chart-container pt-3 position-relative">
+                        <canvas></canvas>
+                        <div class="chart-center d-flex flex-column justify-content-center gap-5">
+                            <i class="fa-solid fa-briefcase fa-3x" style="color: #8ecae6;"></i>
+                            <a href="../jobs/hod-opportunity-view.html"><strong>Access Jobs</strong></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container-fluid ps-5 pe-4 pt-3">
+                <div class="row mt-4">
+                    <div class="col-md-4 d-flex flex-column align-items-center">
+                        <span class="fs-6"><strong>Courses Popularity</strong></span>
+                        <div class="chart-container pt-3 w-100">
+                            <canvas id="courseBarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex flex-column align-items-center">
+                        <span class="fs-6"><strong>FeedBack Blogs</strong></span>
+                        <div class="chart-container pt-3 w-100">
+                            <canvas></canvas>
+                            <div class="chart-center d-flex flex-column justify-content-center gap-5 pt-4">
+                                <i class="fa-regular fa-comments fa-4x" style="color: #8ecae6;"></i>
+                                <a href="../feedback/feedback_view.html"><strong>View FeedBacks</strong></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 d-flex flex-column align-items-center">
+                        <span class="fs-6 mb-2"><strong>Searching Students</strong></span>
+                        <div class="bg-primary-subtle text-white p-4 w-100 rounded h-100 d-flex flex-column justify-content-start"
+                            style="background-color: #1b2a41;">
+                            <input type="number" id="studentIdInput" class="form-control mb-3"
+                                placeholder="Enter Student ID" />
+                            <button onclick="searchStudent()" class="btn btn-light mb-3">Search</button>
+                            <div id="studentInfo" class="fs-6 pt-5 "></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        fetch('../json_data/students_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const yearCounts = {
+                    'First Year': 0,
+                    'Second Year': 0,
+                    'Third Year': 0,
+                    'Fourth Year': 0
+                };
+
+                data.students.forEach(student => {
+                    const credits = student.CompletedCredits;
+                    if (credits <= 33) yearCounts['First Year']++;
+                    else if (credits <= 66) yearCounts['Second Year']++;
+                    else if (credits <= 99) yearCounts['Third Year']++;
+                    else yearCounts['Fourth Year']++;
+                });
+
+                const totalStudents = data.students.length;
+                document.getElementById('studentTotal').textContent = `${totalStudents} Student`;
+
+                const ctx = document.getElementById('studentYearChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: Object.keys(yearCounts),
+                        datasets: [{
+                            data: Object.values(yearCounts),
+                            backgroundColor: ['#219ebc', '#2671BC', '#023047', '#8ecae6'],
+                            borderColor: '#1e2a38',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        cutout: '70%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: 'white',
+                                    font: {
+                                        size: 14
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        return `${context.label}: ${context.raw} students`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+        fetch('../json_data/SuccsessRatee.json')
+            .then(response => response.json())
+            .then(data => {
+                let totalConceptual = 0, totalPractical = 0, conceptualCount = 0, practicalCount = 0;
+
+                data.forEach(student => {
+                    student.CoursesTaken.forEach(course => {
+                        const grades = course.Grades;
+                        for (const section in grades) {
+                            const sectionGrades = grades[section];
+                            if (sectionGrades.Conceptual !== undefined) {
+                                totalConceptual += sectionGrades.Conceptual;
+                                conceptualCount++;
+                            }
+                            if (sectionGrades.Practical !== undefined) {
+                                totalPractical += sectionGrades.Practical;
+                                practicalCount++;
+                            }
+                        }
+                    });
+                });
+
+                const conceptualPercent = ((totalConceptual / conceptualCount) / 20 * 100).toFixed(1);
+                const practicalPercent = ((totalPractical / practicalCount) / 20 * 100).toFixed(1);
+
+                new Chart(document.getElementById("averageSuccessChart").getContext("2d"), {
+                    type: "pie",
+                    data: {
+                        labels: ["Conceptual Theory", "Practical Part"],
+                        datasets: [{
+                            data: [conceptualPercent, practicalPercent],
+                            backgroundColor: ["#023047", "#B22222"]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: { color: 'white' }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: context => context.parsed + "%"
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+        fetch('../json_data/SuccsessRatee.json')
+            .then(response => response.json())
+            .then(data => {
+                const courseFrequency = {};
+
+                // Count how many students took each course
+                data.forEach(student => {
+                    student.CoursesTaken.forEach(course => {
+                        const name = course.CourseName;
+                        courseFrequency[name] = (courseFrequency[name] || 0) + 1;
+                    });
+                });
+
+                const labels = Object.keys(courseFrequency);
+                const values = Object.values(courseFrequency);
+
+                // Generate a different color for each bar
+                const backgroundColors = labels.map((_, index) =>
+                    `hsl(${(index * 360) / labels.length}, 70%, 60%)`
+                );
+
+                const ctx = document.getElementById('courseBarChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Number of Students',
+                            data: values,
+                            backgroundColor: backgroundColors,
+                            borderColor: '#ffffff',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: ctx => `${ctx.raw} students`
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: {
+                                    color: 'white',
+                                    autoSkip: false,
+                                    maxRotation: 45,
+                                    minRotation: 45
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                max: 40,
+                                ticks: {
+                                    color: 'white',
+                                    stepSize: 5
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Number of Students',
+                                    color: 'white'
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error("Error loading or processing JSON:", error));
+
+
+        let students = [];
+
+
+        axios.get('../json_data/students_data.json')
+            .then(response => {
+                students = response.data.students;
+            })
+            .catch(error => {
+                console.error('Failed to load student data:', error);
+            });
+
+        function searchStudent() {
+            const studentId = parseInt(document.getElementById('studentIdInput').value);
+            const studentInfoDiv = document.getElementById('studentInfo');
+            const student = students.find(s => s.StudentID === studentId);
+
+            if (student) {
+                studentInfoDiv.innerHTML = `
+        <p><strong style="color:#B22222">Name:</strong> ${student.Name}</p>
+        <p><strong style="color:#B22222">Email:</strong> ${student.Email}</p>
+        <p><strong style="color:#B22222">GPA:</strong> ${student.GPA}</p>
+        <p><strong style="color:#B22222">Completed Credits:</strong> ${student.CompletedCredits}</p>
+      `;
+            } else {
+                studentInfoDiv.innerHTML = `<p class="text-danger">No student found with ID ${studentId}.</p>`;
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+:root {
+  --mainFont: "Roboto", Arial, sans-serif;
+  --secondFont: " Lato", sans-serif;
+
+}
+
+body {
+  background-color: rgb(229, 235, 238);
+}
+
+.navbar-brand .brand-text {
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: white;
+  font-size: smaller;
+  font-family: var(--secondFont);
+}
+
+.navbar-brand .cap-icon {
+  transform: rotate(-25deg);
+  font-size: 24px;
+  color: white;
+  position: relative;
+  top: -2px;
+  right: -5px;
+
+}
+
+header .navbar {
+  position: absolute;
+  top: 3%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: rgb(40, 61, 105);
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+/* -------------------------------------------- */
+
+.upload-section {
+  padding-top: 10%;
+
+}
+
+.cards .row {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  gap: 0px;
+}
+
+.image-fixed {
+  width: 450px;
+  height: 600px;
+  object-fit: containcover;
+}
+
+.btn {
+  background-color: rgb(40, 61, 105);
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(40, 61, 105);
+  color: white;
+}

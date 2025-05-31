@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduTrack | Student Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="../img/icons.png" />
+    <link rel="stylesheet" href="../log-uni/student.css" />
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <style>
+        canvas#studentChart {
+            display: block;
+            margin: 20px auto;
+            max-width: 500px;
+            max-height: 300px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg ps-5 pe-5">
+            <div class="container-fluid ">
+                <div class="navbar-brand d-flex align-items-start  ">
+                    <i class="fa-solid fa-graduation-cap fa-xl cap-icon"></i>
+                    <a class="brand-text active" aria-current="page" href="#">EduTrack</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="links collapse navbar-collapse text-white" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-auto ms-5">
+                        <a class="nav-link" style="font-weight: bold;" href="../about/about.html">About Us</a>
+                        <a class="nav-link ms-5" style="font-weight: bold;" href="../intacon/intracon.html">IntraCon</a>
+                        <a class="nav-link ms-5" style="font-weight: bold;"
+                            href="../feedback/feedback.html">FeedBack</a>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn btn-outline-light pe-4 ps-4 me-2" type="submit">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mt-4 pt-4">
+        <div class="container ">
+            <div id="studentData" class="mt-5"></div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let students = [];
+
+        axios.get('../json_data/SuccsessRatee.json')
+            .then(response => {
+                students = response.data;
+                showStudentData();
+            })
+            .catch(error => {
+                console.error("Error loading student data:", error);
+                document.getElementById('studentData').innerHTML =
+                    `<div class="alert alert-danger">Error loading student data.</div>`;
+            });
+
+        function showStudentData() {
+            const storedStudentID = localStorage.getItem('loggedStudentID');
+            if (!storedStudentID) {
+                document.getElementById('studentData').innerHTML =
+                    `<div class="alert alert-warning">No student is logged in. Please login first.</div>`;
+                return;
+            }
+
+            const student = students.find(s => s.StudentID.toString() === storedStudentID);
+
+            if (!student) {
+                document.getElementById('studentData').innerHTML =
+                    `<div class="alert alert-danger">Student data not found.</div>`;
+                return;
+            }
+
+            const welcome = `<h3 class="text-center mb-4 text-custom-blue">Welcome, ${student.Name}</h3>`;
+            let accordionHTML = `<div class="accordion" id="courseAccordion">`;
+
+            let totalConceptualMarks = 0;
+            let totalConceptualMax = 0;
+
+            let totalPracticalMarks = 0;
+            let totalPracticalMax = 0;
+
+            student.CoursesTaken.forEach((course, index) => {
+                const grades = course.Grades;
+
+                const firstConceptual = grades.First?.Conceptual ?? 0;
+                const firstPractical = grades.First?.Practical ?? 0;
+
+                const secondConceptual = grades.Second?.Conceptual ?? 0;
+                const secondPractical = grades.Second?.Practical ?? 0;
+
+                const assignmentPractical = grades.Assignment ?? grades.Assinment ?? 0;
+
+                const finalConceptual = grades.Final?.Conceptual ?? 0;
+                const finalPractical = grades.Final?.Practical ?? 0;
+
+                const conceptualCourseSum = firstConceptual + secondConceptual + finalConceptual;
+                const practicalCourseSum = firstPractical + secondPractical + assignmentPractical + finalPractical;
+
+                totalConceptualMarks += conceptualCourseSum;
+                totalPracticalMarks += practicalCourseSum;
+
+                totalConceptualMax += 40;
+                totalPracticalMax += 60;
+
+                const gradeDetails = Object.entries(grades).map(([key, value]) => {
+                    if (typeof value === 'object' && value !== null) {
+                        const entries = Object.entries(value);
+                        return `<li class="list-group-item d-flex justify-content-between">
+                          <strong>${key}</strong>
+                          <span>${entries.map(([k, v]) => `${k}: ${v}`).join(", ")}</span>
+                        </li>`;
+                    } else {
+                        return `<li class="list-group-item d-flex justify-content-between">
+                          <strong>${key}</strong>
+                          <span>${value}</span>
+                        </li>`;
+                    }
+                }).join("");
+
+                const totalScore = conceptualCourseSum + practicalCourseSum;
+                const colorClass = course.Passed ? "text-success" : "text-danger";
+
+                accordionHTML += `
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading${index}">
+                      <button class="accordion-button collapsed ${colorClass}" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+                        ${course.CourseName}
+                      </button>
+                    </h2>
+                    <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}"
+                      data-bs-parent="#courseAccordion">
+                      <div class="accordion-body">
+                        <ul class="list-group">
+                          ${gradeDetails}
+                          <li class="list-group-item d-flex justify-content-between fw-bold">
+                            <strong>Total</strong>
+                            <span>${totalScore}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>`;
+            });
+
+            accordionHTML += `</div>`;
+
+            const avgConceptualPercent = totalConceptualMax > 0 ? ((totalConceptualMarks / totalConceptualMax) * 100).toFixed(2) : 0;
+            const avgPracticalPercent = totalPracticalMax > 0 ? ((totalPracticalMarks / totalPracticalMax) * 100).toFixed(2) : 0;
+            const chartSection = `
+  <div class="row mt-5 text-center align-items-start">
+    <div class="col-md-4">
+      <h4 class="text-custom-blue">Success Rate</h4>
+      <canvas id="studentChart" width="400" height="300"></canvas>
+    </div>
+ <div class="col-md-4 d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+  <h4 class="text-custom-blue">GPA</h4>
+  <div id="gpaChart" style="width: 300px; height: 300px;"></div>
+</div>
+
+    <div class="col-md-4 d-flex flex-column align-items-center justify-content-center" style="height: 100%;">
+      <h4 class="text-custom-blue">Explore More</h4>
+      <div class="d-flex flex-column gap-3 flex-grow-1 align-items-center pt-5 mt-4" style="height: 250px;">
+                <i class="fa-solid fa-briefcase fa-3x " style="color:rgb(40, 61, 105)"></i>
+
+        <a href="../jobs/opportunities-view.html" class="btn btn-primary btn-lg">Job Vaccancies</a>
+      </div>
+    </div>
+  </div>
+`;
+
+
+
+
+            document.getElementById('studentData').innerHTML = welcome + accordionHTML + chartSection;
+
+            const ctx = document.getElementById('studentChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Conceptual Theory (%)', 'Practical Part (%)'],
+                        datasets: [{
+                            data: [avgConceptualPercent, avgPracticalPercent],
+                            backgroundColor: ['#4e79a7', '#B22222'],
+                            hoverOffset: 10
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: { position: 'bottom' },
+                            tooltip: {
+                                callbacks: {
+                                    label: function (context) {
+                                        return ` ${context.parsed}%`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            const totalObtainedMarks = totalConceptualMarks + totalPracticalMarks;
+            const totalMaxMarks = totalConceptualMax + totalPracticalMax;
+            const gpa = totalMaxMarks > 0 ? ((totalObtainedMarks / totalMaxMarks) * 4).toFixed(2) : 0;
+
+            const gpaPercent = ((gpa / 4) * 100).toFixed(2);
+
+            // Determine rating
+            let gpaRating = 'On Probation';
+            if (gpa >= 4.0) gpaRating = 'Distinguished';
+            else if (gpa >= 3.5) gpaRating = 'Excellent';
+            else if (gpa >= 3.0) gpaRating = 'Very Good';
+            else if (gpa >= 2.5) gpaRating = 'Good';
+            else if (gpa >= 2.0) gpaRating = 'Fair';
+
+            //
+            let markerColor = '#B22222';
+            if (gpa >= 4.0) markerColor = '#2E7D32';
+            else if (gpa >= 3.5) markerColor = '#4CAF50';
+            else if (gpa >= 3.0) markerColor = '#81C784';
+            else if (gpa >= 2.5) markerColor = '#FFA500';
+            else if (gpa >= 2.0) markerColor = '#FF5353';
+
+            JSC.chart('gpaChart', {
+                type: 'gauge',
+                legend_visible: false,
+                background: 'none',
+                chartArea: {
+                    fill: 'transparent',
+                    outline: { width: 0 },
+                    boxVisible: false
+                },
+
+                xAxis: {
+                    scale: { range: [0, 1], invert: true }
+                },
+                palette: {
+                    pointValue: '%yValue',
+                    ranges: [
+                        { value: 2.0, color: '#B22222' },
+                        { value: 2.5, color: '#FF5353' },
+                        { value: 3.0, color: '#FFA500' },
+                        { value: 3.5, color: '#81C784' },
+                        { value: 4.0, color: '#4CAF50' },
+                        { value: 4.2, color: '#2E7D32' }
+                    ]
+                },
+                yAxis: {
+                    defaultTick: { padding: 13, enabled: false },
+                    customTicks: [2.0, 2.5, 3.0, 3.5, 4.0],
+                    line: {
+                        width: 15,
+                        breaks_gap: 0.03,
+                        color: 'smartPalette'
+                    },
+                    scale: { range: [0, 4.2] }
+                },
+                defaultSeries: {
+                    opacity: 1,
+                    shape: {
+                        label: {
+                            align: 'center',
+                            verticalAlign: 'middle',
+                            style: {
+                                fontSize: '20px'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    type: 'marker',
+                    name: 'GPA',
+                    shape_label: {
+                        text: `${gpaPercent}%<br/><span style='font-size: 24px'>${gpaRating}</span>`,
+                        style: { fontSize: 30 }
+                    },
+                    defaultPoint: {
+                        tooltip: `GPA: ${gpa}`,
+                        marker: {
+                            outline: { width: 10, color: markerColor },
+                            fill: 'white',
+                            type: 'circle',
+                            visible: true,
+                            size: 30
+                        }
+                    },
+                    points: [[1, parseFloat(gpa)]]
+                }]
+            });
+        }
+        setTimeout(() => {
+            const svg = document.querySelector('#gpaChart svg');
+            const paths = svg.querySelectorAll('path');
+
+            for (const path of paths) {
+                const fill = path.getAttribute('fill');
+                if (fill === '#FFFFFF' || fill === 'white' || fill === 'rgb(255, 255, 255)') {
+                    path.remove();
+                    return;
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+{
+  "feedback": [
+    {
+      "FeedbackID": 1,
+      "StudentID": 8,
+      "Message": "The system is easy to use and very helpful.",
+      "SubmittedAt": "2025-04-27T10:00:00"
+    },
+    {
+      "FeedbackID": 2,
+      "StudentID": 17,
+      "Message": "I wish there were more resources linked in the course page.",
+      "SubmittedAt": "2025-04-27T10:15:00"
+    },
+    {
+      "FeedbackID": 3,
+      "StudentID": 11,
+      "Message": "I like the alerts for low GPA, it keeps me on track.",
+      "SubmittedAt": "2025-04-27T10:30:00"
+    },
+    {
+      "FeedbackID": 4,
+      "StudentID": 10,
+      "Message": "Course registration was smoother this semester, thank you!",
+      "SubmittedAt": "2025-04-27T10:45:00"
+    },
+    {
+      "FeedbackID": 5,
+      "StudentID": 16,
+      "Message": "Can we have notifications for prerequisite issues?",
+      "SubmittedAt": "2025-04-27T11:00:00"
+    },
+    {
+      "FeedbackID": 6,
+      "StudentID": 18,
+      "Message": "The dashboard gives a good overview of my progress.",
+      "SubmittedAt": "2025-04-27T11:15:00"
+    },
+    {
+      "FeedbackID": 7,
+      "StudentID": 7,
+      "Message": "Sometimes the page is slow, maybe it needs optimization.",
+      "SubmittedAt": "2025-04-27T11:30:00"
+    },
+    {
+      "FeedbackID": 8,
+      "StudentID": 20,
+      "Message": "Great idea to color code course statuses!",
+      "SubmittedAt": "2025-04-27T11:45:00"
+    },
+    {
+      "FeedbackID": 9,
+      "StudentID": 20,
+      "Message": "Can we add a comment box for each course?",
+      "SubmittedAt": "2025-04-27T12:00:00"
+    },
+    {
+      "FeedbackID": 10,
+      "StudentID": 12,
+      "Message": "I really appreciate the GPA tracking and summaries.",
+      "SubmittedAt": "2025-04-27T12:15:00"
+    }
+  ]
+}

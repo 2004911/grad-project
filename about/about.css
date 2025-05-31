@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+AU+SA:wght@100..400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+:root {
+  --mainFont: "Roboto", Arial, sans-serif;
+  --secondFont: " Lato", sans-serif;
+
+}
+
+body {
+  background-color: rgb(210, 218, 223);
+}
+
+.navbar-brand .brand-text {
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: rgb(40, 61, 105);
+  font-size: smaller;
+  font-family: var(--secondFont);
+}
+
+.navbar-brand .cap-icon {
+  transform: rotate(-25deg);
+  font-size: 24px;
+  color: rgb(40, 61, 105);
+  position: relative;
+  top: -2px;
+  right: -5px;
+
+}
+
+header .navbar {
+  position: absolute;
+  top: 2%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(225, 229, 231, 0.9);
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+header .buttons .btn {
+  width: 100%;
+  color: rgb(28, 71, 151);
+  border: 1px solid rgb(28, 71, 151);
+  background-color: transparent;
+
+}
+
+header .buttons {
+  display: flex;
+  gap: 10px;
+  width: 30%;
+  justify-content: flex-end;
+  font-family: var(--secondFont);
+  cursor: pointer;
+
+}
+
+header .buttons .btn:hover {
+  background-color: rgb(40, 61, 105);
+  color: white;
+  border: 1px solid transparent;
+}
+
+header .links a {
+  color: rgb(28, 71, 151) !important;
+  font-family: var(--secondFont);
+  font-weight: 500;
+  transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+.navbar-nav a:hover {
+  transform: scale(1.5);
+  color: rgb(28, 71, 151);
+}
+
+.navbar-nav a.active:hover {
+  transform: none;
+  color: rgb(28, 71, 151);
+}
+
+/* ------------------------------------------------- */
+.about img {
+  border-radius: 50%;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  padding-top: 9%;
+}
+
+.about .first {
+  padding-left: 5%;
+}
+
+.about .second {
+  padding-left: 20%;
+}
+
+.about .third {
+  padding-left: 5%;
+}
+
+.about .hover h2 {
+  padding-left: 10%;
+  ;
+}
+
+.about h2 {
+  font-family: var(--secondFont);
+  color: rgb(40, 61, 105);
+  font-size: 20px;
+}
+
+.modal-title {
+  text-align: center;
+  width: 100%;
+}
+
+.modal {
+  align-content: center;
+  font-family: var(--secondFont);
+
+
+}
+
+.modal-header {
+  background-color: rgb(152, 195, 221);
+}
+
+.modal-body {
+  background-color: white
+}
+
+.modal-body li {
+  position: relative;
+  display: list-item;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards;
+  margin-bottom: 10px;
+
+
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+
+.modal-body li:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.modal-body li:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.modal-body li:nth-child(3) {
+  animation-delay: 1.7s;
+}
+
+.custom-medium {
+  max-width: 690px !important;
+  width: 100%;
+}
+
+.co {
+  max-width: 550px !important;
+  width: 100%;
+}
+
+.modal-body ul {
+  list-style: disc inside;
+}

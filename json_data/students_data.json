@@ -1,0 +1,164 @@
+{
+  "students": [
+    {
+      "StudentID": 1,
+      "Name": "Ahmad Ali Hasan",
+      "Email": "ahmad.ali@cit.just.edu.jo",
+      "GPA": 3.2,
+      "CompletedCredits": 90,
+      "Password": "password1"
+    },
+    {
+      "StudentID": 2,
+      "Name": "Sara Ahmad Zaid",
+      "Email": "sara.ahmad@cit.just.edu.jo",
+      "GPA": 3.8,
+      "CompletedCredits": 100,
+      "Password": "password2"
+    },
+    {
+      "StudentID": 3,
+      "Name": "Mohammad Yaseen Tarek",
+      "Email": "mohammad.yaseen@cit.just.edu.jo",
+      "GPA": 2.9,
+      "CompletedCredits": 66,
+      "Password": "password3"
+    },
+    {
+      "StudentID": 4,
+      "Name": "Laila Sami Naser",
+      "Email": "laila.sami@cit.just.edu.jo",
+      "GPA": 3.5,
+      "CompletedCredits": 33,
+      "Password": "password4"
+    },
+    {
+      "StudentID": 5,
+      "Name": "Omar Khaled Ayman",
+      "Email": "omar.khaled@cit.just.edu.jo",
+      "GPA": 3.0,
+      "CompletedCredits": 40,
+      "Password": "password5"
+    },
+    {
+      "StudentID": 6,
+      "Name": "Maya Yousef Fadel",
+      "Email": "maya.yousef@cit.just.edu.jo",
+      "GPA": 2.7,
+      "CompletedCredits": 80,
+      "Password": "password6"
+    },
+    {
+      "StudentID": 7,
+      "Name": "Yara Maher Ibrahim",
+      "Email": "yara.maher@cit.just.edu.jo",
+      "GPA": 3.9,
+      "CompletedCredits": 132,
+      "Password": "password7"
+    },
+    {
+      "StudentID": 8,
+      "Name": "Nour Hasan Salem",
+      "Email": "nour.hasan@cit.just.edu.jo",
+      "GPA": 2.5,
+      "CompletedCredits": 55,
+      "Password": "password8"
+    },
+    {
+      "StudentID": 9,
+      "Name": "Khaled Nasser Adel",
+      "Email": "khaled.nasser@cit.just.edu.jo",
+      "GPA": 3.3,
+      "CompletedCredits": 20,
+      "Password": "password9"
+    },
+    {
+      "StudentID": 10,
+      "Name": "Reem Fadi Jamal",
+      "Email": "reem.fadi@cit.just.edu.jo",
+      "GPA": 3.1,
+      "CompletedCredits": 12,
+      "Password": "password10"
+    },
+    {
+      "StudentID": 11,
+      "Name": "Tariq Jamal Maher",
+      "Email": "tariq.jamal@cit.just.edu.jo",
+      "GPA": 2.8,
+      "CompletedCredits": 66,
+      "Password": "password11"
+    },
+    {
+      "StudentID": 12,
+      "Name": "Haneen Saeed Khalil",
+      "Email": "haneen.saeed@cit.just.edu.jo",
+      "GPA": 3.6,
+      "CompletedCredits": 50,
+      "Password": "password12"
+    },
+    {
+      "StudentID": 13,
+      "Name": "Alaa Adel Fares",
+      "Email": "alaa.adel@cit.just.edu.jo",
+      "GPA": 3.4,
+      "CompletedCredits": 92,
+      "Password": "password13"
+    },
+    {
+      "StudentID": 14,
+      "Name": "Motasem Bassam Tamer",
+      "Email": "motasem.bassam@cit.just.edu.jo",
+      "GPA": 2.6,
+      "CompletedCredits": 65,
+      "Password": "password14"
+    },
+    {
+      "StudentID": 15,
+      "Name": "Salma Ayman Noor",
+      "Email": "salma.ayman@cit.just.edu.jo",
+      "GPA": 3.7,
+      "CompletedCredits": 102,
+      "Password": "password15"
+    },
+    {
+      "StudentID": 16,
+      "Name": "Zaid Osama Fouad",
+      "Email": "zaid.osama@cit.just.edu.jo",
+      "GPA": 2.9,
+      "CompletedCredits": 78,
+      "Password": "password16"
+    },
+    {
+      "StudentID": 17,
+      "Name": "Rana Basel Waleed",
+      "Email": "rana.basel@cit.just.edu.jo",
+      "GPA": 3.0,
+      "CompletedCredits": 82,
+      "Password": "password17"
+    },
+    {
+      "StudentID": 18,
+      "Name": "Hassan Samir Hani",
+      "Email": "hassan.samir@cit.just.edu.jo",
+      "GPA": 3.2,
+      "CompletedCredits": 70,
+      "Password": "password18"
+    },
+    {
+      "StudentID": 19,
+      "Name": "Aya Bilal Suhaib",
+      "Email": "aya.bilal@cit.just.edu.jo",
+      "GPA": 3.5,
+      "CompletedCredits": 93,
+      "Password": "password19"
+    },
+    {
+      "StudentID": 20,
+      "Name": "Fares Omar Salem",
+      "Email": "fares.omar@cit.just.edu.jo",
+      "GPA": 2.7,
+      "CompletedCredits": 40,
+      "Password": "password20"
+    }
+  ]
+}
